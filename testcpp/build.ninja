@@ -1,0 +1,11 @@
+# build.ninja
+cc     = g++
+cflags = -O0 -g -Wall --std=c++17
+
+rule compile
+  command = $cc $cflags $in -o test
+
+build test: compile main.cpp
+build hello: compile hello.cpp
+
+default test 
